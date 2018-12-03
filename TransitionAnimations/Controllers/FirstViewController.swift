@@ -12,7 +12,11 @@ class FirstViewController: UIViewController {
     
     //MARK: - Properties
     
-    let transitionAnimator = FadeAnimator()
+    let transitionAnimator: DirectionAnimator = {
+        let animator = DirectionAnimator()
+        animator.transitionDirection = .random
+        return animator
+    }()
     
     //MARK: - Lifecycle
 
@@ -37,10 +41,12 @@ class FirstViewController: UIViewController {
 extension FirstViewController : UIViewControllerTransitioningDelegate {
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transitionAnimator.isDismissed = false
         return transitionAnimator
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transitionAnimator.isDismissed = true
         return transitionAnimator
     }
 }
