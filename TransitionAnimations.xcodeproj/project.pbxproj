@@ -8,22 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		F8FD6DFD21B49C37003C10DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FD6DFC21B49C37003C10DC /* AppDelegate.swift */; };
-		F8FD6DFF21B49C37003C10DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FD6DFE21B49C37003C10DC /* ViewController.swift */; };
+		F8FD6DFF21B49C37003C10DC /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FD6DFE21B49C37003C10DC /* FirstViewController.swift */; };
 		F8FD6E0221B49C37003C10DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8FD6E0021B49C37003C10DC /* Main.storyboard */; };
 		F8FD6E0421B49C37003C10DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8FD6E0321B49C37003C10DC /* Assets.xcassets */; };
 		F8FD6E0721B49C37003C10DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8FD6E0521B49C37003C10DC /* LaunchScreen.storyboard */; };
 		F8FD6E1321B49E14003C10DC /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FD6E1221B49E14003C10DC /* Consts.swift */; };
+		F8FD6E1821B4AD2C003C10DC /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FD6E1721B4AD2C003C10DC /* SecondViewController.swift */; };
+		F8FD6E1B21B591AF003C10DC /* FadeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FD6E1A21B591AF003C10DC /* FadeAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F8FD6DF921B49C37003C10DC /* TransitionAnimations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransitionAnimations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8FD6DFC21B49C37003C10DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F8FD6DFE21B49C37003C10DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F8FD6DFE21B49C37003C10DC /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		F8FD6E0121B49C37003C10DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F8FD6E0321B49C37003C10DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8FD6E0621B49C37003C10DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8FD6E0821B49C37003C10DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8FD6E1221B49E14003C10DC /* Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
+		F8FD6E1721B4AD2C003C10DC /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		F8FD6E1A21B591AF003C10DC /* FadeAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		F8FD6DFB21B49C37003C10DC /* TransitionAnimations */ = {
 			isa = PBXGroup;
 			children = (
+				F8FD6E1921B55969003C10DC /* Animation */,
 				F8FD6E1121B49E01003C10DC /* Constansts */,
 				F8FD6E0E21B49C7F003C10DC /* Controllers */,
 				F8FD6E1421B49E29003C10DC /* Views */,
@@ -71,7 +76,8 @@
 		F8FD6E0E21B49C7F003C10DC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F8FD6DFE21B49C37003C10DC /* ViewController.swift */,
+				F8FD6DFE21B49C37003C10DC /* FirstViewController.swift */,
+				F8FD6E1721B4AD2C003C10DC /* SecondViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -121,6 +127,14 @@
 			children = (
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F8FD6E1921B55969003C10DC /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				F8FD6E1A21B591AF003C10DC /* FadeAnimator.swift */,
+			);
+			path = Animation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,7 +209,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8FD6DFF21B49C37003C10DC /* ViewController.swift in Sources */,
+				F8FD6E1B21B591AF003C10DC /* FadeAnimator.swift in Sources */,
+				F8FD6E1821B4AD2C003C10DC /* SecondViewController.swift in Sources */,
+				F8FD6DFF21B49C37003C10DC /* FirstViewController.swift in Sources */,
 				F8FD6E1321B49E14003C10DC /* Consts.swift in Sources */,
 				F8FD6DFD21B49C37003C10DC /* AppDelegate.swift in Sources */,
 			);

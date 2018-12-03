@@ -10,4 +10,16 @@ import Foundation
 
 struct Consts {
     
+    struct Controllers {
+        
+        struct First {
+            static let stryboardName = "Main"
+            static let storyboardId = "FirstViewControllerId"
+        }
+        
+        struct Second {
+            static let storyboardName = "Main"
+            static let storyboardId = "SecondViewControllerId"
+        }
+    }
 }
