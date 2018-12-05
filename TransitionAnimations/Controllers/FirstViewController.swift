@@ -12,17 +12,20 @@ class FirstViewController: UIViewController {
     
     //MARK: - Properties
     
-    let transitionAnimator: DirectionAnimator = {
+    private let transitionAnimator: DirectionAnimator = {
         let animator = DirectionAnimator()
         animator.transitionDirection = .random
         return animator
     }()
     
+    private var scaleAnimator: ScaleInteractiveAnimator!
+    
+    
     //MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        scaleAnimator = ScaleInteractiveAnimator(controller: self)
     }
     
     //MARK: - Actions
@@ -35,6 +38,7 @@ class FirstViewController: UIViewController {
     }
     
 }
+
 
 //MARK: - UIViewControllerTransitioningDelegate
 
@@ -49,5 +53,9 @@ extension FirstViewController : UIViewControllerTransitioningDelegate {
         transitionAnimator.isDismissed = true
         return transitionAnimator
     }
+    
+//    func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+//        <#code#>
+//    }
 }
 
