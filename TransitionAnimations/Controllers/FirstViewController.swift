@@ -14,27 +14,35 @@ class FirstViewController: UIViewController {
     
     private let transitionAnimator: DirectionAnimator = {
         let animator = DirectionAnimator()
-        animator.transitionDirection = .random
+        animator.transitionDirection = .right
         return animator
     }()
     
     private var scaleAnimator: ScaleInteractiveAnimator!
+    
+    private var destinationController: UIViewController!
     
     
     //MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        scaleAnimator = ScaleInteractiveAnimator(controller: self)
+        destinationController = createDestinationController()
+        scaleAnimator = ScaleInteractiveAnimator(animator: transitionAnimator)
+        scaleAnimator.sourceViewController = self
+        scaleAnimator.destinationViewController = destinationController
     }
     
     //MARK: - Actions
     
     @IBAction func showSecondController(_ sender: UITapGestureRecognizer) {
+        present(destinationController, animated: true, completion: nil)
+    }
+    
+    private func createDestinationController() -> UIViewController {
         let storyboard = UIStoryboard(name: Consts.Controllers.Second.storyboardName, bundle: Bundle.main)
         let controller = storyboard.instantiateViewController(withIdentifier: Consts.Controllers.Second.storyboardId)
-        controller.transitioningDelegate = self
-        present(controller, animated: true, completion: nil)
+        return controller
     }
     
 }
@@ -42,20 +50,22 @@ class FirstViewController: UIViewController {
 
 //MARK: - UIViewControllerTransitioningDelegate
 
-extension FirstViewController : UIViewControllerTransitioningDelegate {
-    
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        transitionAnimator.isDismissed = false
-        return transitionAnimator
-    }
-    
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        transitionAnimator.isDismissed = true
-        return transitionAnimator
-    }
-    
-//    func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-//        <#code#>
+//extension FirstViewController : UIViewControllerTransitioningDelegate {
+//    
+//    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        transitionAnimator.isDismissed = false
+//        print("Non Interactive")
+//        return transitionAnimator
 //    }
-}
+//    
+//    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        transitionAnimator.isDismissed = true
+//        return transitionAnimator
+//    }
+//    
+//    func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+//        print("Interactive")
+//        return scaleAnimator
+//    }
+//}
 
