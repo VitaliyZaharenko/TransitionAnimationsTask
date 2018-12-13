@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class FadeInFadeOutTransitionViewController: UIViewController {
     
     //MARK: - Properties
     
@@ -34,7 +34,7 @@ class FirstViewController: UIViewController {
 
 //MARK: - UIViewControllerTransitioningDelegate
 
-extension FirstViewController : UIViewControllerTransitioningDelegate {
+extension FadeInFadeOutTransitionViewController : UIViewControllerTransitioningDelegate {
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return transitionAnimator

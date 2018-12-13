@@ -12,9 +12,9 @@ struct Consts {
     
     struct Controllers {
         
-        struct First {
-            static let stryboardName = "Main"
-            static let storyboardId = "FirstViewControllerId"
+        struct FadeInFadeOutTransition {
+            static let stryboardName = "FadeInFadeOut"
+            static let storyboardId = "FadeInFadeOutTransitionViewControllerId"
         }
         
         struct Second {
