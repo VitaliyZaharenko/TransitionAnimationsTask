@@ -10,7 +10,7 @@ import UIKit
 
 fileprivate struct Const {
     
-    static let panLenght: CGFloat = 0.3
+    static let panLenghtRelativeToSuperview: CGFloat = 0.5
 }
 
 class DirectionInteractiveAnimator: UIPercentDrivenInteractiveTransition {
@@ -60,8 +60,6 @@ class DirectionInteractiveAnimator: UIPercentDrivenInteractiveTransition {
         }
     }
     
-    private var presentGestureRecognizer: UIScreenEdgePanGestureRecognizer?
-    
     weak var destinationViewController: UIViewController? {
         didSet {
             destinationViewController?.transitioningDelegate = self
@@ -69,11 +67,16 @@ class DirectionInteractiveAnimator: UIPercentDrivenInteractiveTransition {
         }
     }
     
+    private var presentGestureRecognizer: UIScreenEdgePanGestureRecognizer?
+    private var dismissGestureRecognizer: UIScreenEdgePanGestureRecognizer?
+    
     var direction: Direction = .left {
         didSet {
             setupDirection()
         }
     }
+    
+    private var isDismissed = false
     
     private var animator: DirectionAnimator
     
@@ -91,13 +94,25 @@ class DirectionInteractiveAnimator: UIPercentDrivenInteractiveTransition {
     
     @objc func handleGesture(sender: UIScreenEdgePanGestureRecognizer){
         
+        if let dismissRecognizer = dismissGestureRecognizer {
+            if dismissRecognizer == sender {
+                isDismissed = true
+            }
+        } else {
+            isDismissed = false
+        }
+        
         let translation = sender.translation(in: sender.view!)
         
         let (multX, multY) = direction.maskTuple
         let (width, height) = (sender.view!.frame.width, sender.view!.frame.height)
-        let (xLength, yLength): (CGFloat, CGFloat) = (width * Const.panLenght, height * Const.panLenght)
+        let (xLength, yLength): (CGFloat, CGFloat) = (width * Const.panLenghtRelativeToSuperview, height * Const.panLenghtRelativeToSuperview)
         
-        let progressUnclamped = (multX * translation.x / xLength) + (multY * translation.y / yLength)
+        var progressUnclamped = (multX * translation.x / xLength) + (multY * translation.y / yLength)
+        
+        if isDismissed {
+            progressUnclamped *= -1
+        }
         
         var progress = Double(progressUnclamped)
         progress = Double.maximum(0.0, progress)
@@ -108,8 +123,12 @@ class DirectionInteractiveAnimator: UIPercentDrivenInteractiveTransition {
         case .began:
             
             inProgress = true
-            if let destination = destinationViewController {
-                sourceViewController?.present(destination, animated: true, completion: nil)//destinationController
+            if let destination = destinationViewController{
+                if(!isDismissed){
+                    sourceViewController?.present(destination, animated: true, completion: nil)
+                } else {
+                    destination.dismiss(animated: true, completion: nil)
+                }
             }
             
         
@@ -146,7 +165,9 @@ extension DirectionInteractiveAnimator {
     }
     
     func addDismissGestureRecognizer(){
-        
+        dismissGestureRecognizer = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handleGesture(sender:)))
+        setupDirection()
+        destinationViewController?.view.addGestureRecognizer(dismissGestureRecognizer!)
     }
     
     func setupDirection(){
@@ -154,9 +175,11 @@ extension DirectionInteractiveAnimator {
         case .left:
             animator.transitionDirection = .left
             presentGestureRecognizer?.edges = .right
+            dismissGestureRecognizer?.edges = .left
         case .right:
             animator.transitionDirection = .right
             presentGestureRecognizer?.edges = .left
+            dismissGestureRecognizer?.edges = .right
         }
     }
 }
