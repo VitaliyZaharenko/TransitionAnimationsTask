@@ -12,7 +12,7 @@ fileprivate struct Const {
     static let hintStringFormat = "Pan from %s edge to start transition"
 }
 
-class FirstViewController: UIViewController {
+class DirectionInteractiveTransitionViewController: UIViewController {
     
     //MARK: - Views
     
@@ -74,7 +74,7 @@ class FirstViewController: UIViewController {
 
 //MARK: - Private Helper Methods
 
-extension FirstViewController {
+extension DirectionInteractiveTransitionViewController {
     func setupSwitchBarButtonTitle() {
         switchTransitionDirectionBarButton.title = interactiveAnimator.direction.title
     }

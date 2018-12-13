@@ -12,9 +12,9 @@ struct Consts {
     
     struct Controllers {
         
-        struct First {
-            static let stryboardName = "Main"
-            static let storyboardId = "FirstViewControllerId"
+        struct DirectionInteractiveTransition {
+            static let stryboardName = "DirectionInteractive"
+            static let storyboardId = "DirectionInteractiveTransitionViewControllerId"
         }
         
         struct Second {
