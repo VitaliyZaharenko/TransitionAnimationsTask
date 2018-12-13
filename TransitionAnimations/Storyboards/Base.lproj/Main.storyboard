@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E50-3B-H74">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic1" translatesAutoresizingMaskIntoConstraints="NO" id="E2j-mI-3pM">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t9d-uf-R3Z">
                                 <rect key="frame" x="0.0" y="269.5" width="375" height="128"/>
@@ -57,6 +57,17 @@
                             <outletCollection property="gestureRecognizers" destination="dXT-VS-5Gi" appends="YES" id="FIt-1h-ISv"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="J5p-9l-lEa">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="1QR-I2-RQk">
+                            <connections>
+                                <action selector="switchTransitionDirection:" destination="BYZ-38-t0r" id="ATL-gR-Pz8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="hintLabel" destination="5b8-nt-kdR" id="1b0-Dx-O29"/>
+                        <outlet property="switchTransitionDirectionBarButton" destination="1QR-I2-RQk" id="uYp-wz-jQZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="dXT-VS-5Gi">
@@ -65,7 +76,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="188" y="55"/>
+            <point key="canvasLocation" x="527.20000000000005" y="54.422788605697157"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="vkV-vu-Gsq">
@@ -125,7 +136,25 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="894" y="56"/>
+            <point key="canvasLocation" x="1232.8" y="55.322338830584712"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="y0K-aH-TrX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E50-3B-H74" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5iW-Ky-KV1">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="dQ4-zZ-7Wc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P2S-IU-xxH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-202" y="55"/>
         </scene>
     </scenes>
     <resources>

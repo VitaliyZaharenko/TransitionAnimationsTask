@@ -8,7 +8,49 @@
 
 import UIKit
 
-class ScaleInteractiveAnimator: UIPercentDrivenInteractiveTransition {
+fileprivate struct Const {
+    
+    static let panLenght: CGFloat = 0.3
+}
+
+class DirectionInteractiveAnimator: UIPercentDrivenInteractiveTransition {
+    
+    enum Direction {
+        case left, right
+        
+        fileprivate var maskTuple: (CGFloat, CGFloat) {
+            get {
+                switch self {
+                case .left:
+                    return (-1.0, 0)
+                case .right:
+                    return (1.0, 0)
+                }
+            }
+        }
+        
+        var opposite: Direction {
+            get {
+                switch self {
+                case .left:
+                    return .right
+                case .right:
+                    return .left
+                }
+            }
+        }
+        
+        var title: String {
+            get {
+                switch self {
+                case .left:
+                    return "Left"
+                case .right:
+                    return "Right"
+                }
+            }
+        }
+    }
     
     //MARK: - Properties
     
@@ -18,10 +60,18 @@ class ScaleInteractiveAnimator: UIPercentDrivenInteractiveTransition {
         }
     }
     
+    private var presentGestureRecognizer: UIScreenEdgePanGestureRecognizer?
+    
     weak var destinationViewController: UIViewController? {
         didSet {
             destinationViewController?.transitioningDelegate = self
             addDismissGestureRecognizer()
+        }
+    }
+    
+    var direction: Direction = .left {
+        didSet {
+            setupDirection()
         }
     }
     
@@ -32,8 +82,8 @@ class ScaleInteractiveAnimator: UIPercentDrivenInteractiveTransition {
     
     //MARK: - Initialzation
     
-    init(animator: DirectionAnimator){
-        self.animator = animator
+    override init(){
+        self.animator = DirectionAnimator()
         super.init()
     }
     
@@ -43,35 +93,34 @@ class ScaleInteractiveAnimator: UIPercentDrivenInteractiveTransition {
         
         let translation = sender.translation(in: sender.view!)
         
-        let progressUnclamped = Double(-(translation.x / 200))
-        var progress = Float((0.0 ... 1.0).clamped(to: progressUnclamped))
-        //progress = CGFloat(fminf(fmaxf(Float(progress), 0.0), 1.0))
+        let (multX, multY) = direction.maskTuple
+        let (width, height) = (sender.view!.frame.width, sender.view!.frame.height)
+        let (xLength, yLength): (CGFloat, CGFloat) = (width * Const.panLenght, height * Const.panLenght)
+        
+        let progressUnclamped = (multX * translation.x / xLength) + (multY * translation.y / yLength)
+        
+        var progress = Double(progressUnclamped)
+        progress = Double.maximum(0.0, progress)
+        progress = Double.minimum(1.0, progress)
         
         switch sender.state {
             
-        // 2
         case .began:
-            print("Begin")
+            
             inProgress = true
             if let destination = destinationViewController {
-                
                 sourceViewController?.present(destination, animated: true, completion: nil)//destinationController
             }
             
-            //viewController.dismiss(animated: true, completion: nil)
-            
-        // 3
+        
         case .changed:
-            print("Changed, \(shouldComplete), \(progress)")
             shouldComplete = progress > 0.5
-            update(progress)
+            update(CGFloat(progress))
             
-        // 4
         case .cancelled:
             inProgress = false
             cancel()
             
-        // 5
         case .ended:
             inProgress = false
             if shouldComplete {
@@ -88,23 +137,34 @@ class ScaleInteractiveAnimator: UIPercentDrivenInteractiveTransition {
 
 //MARK: - Private Helper Methods
 
-extension ScaleInteractiveAnimator {
+extension DirectionInteractiveAnimator {
     
     func addPresentGestureRecognizer(){
-        let recognizer =  UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handleGesture(sender:)))
-        recognizer.edges = .right
-        sourceViewController?.view.addGestureRecognizer(recognizer)
+        presentGestureRecognizer =  UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handleGesture(sender:)))
+        setupDirection()
+        sourceViewController?.view.addGestureRecognizer(presentGestureRecognizer!)
     }
     
     func addDismissGestureRecognizer(){
         
+    }
+    
+    func setupDirection(){
+        switch self.direction {
+        case .left:
+            animator.transitionDirection = .left
+            presentGestureRecognizer?.edges = .right
+        case .right:
+            animator.transitionDirection = .right
+            presentGestureRecognizer?.edges = .left
+        }
     }
 }
 
 
 
 //MARK: - UIViewContr
-extension ScaleInteractiveAnimator: UIViewControllerTransitioningDelegate {
+extension DirectionInteractiveAnimator: UIViewControllerTransitioningDelegate {
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         animator.isDismissed = false

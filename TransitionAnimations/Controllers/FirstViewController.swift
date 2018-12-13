@@ -8,17 +8,26 @@
 
 import UIKit
 
+fileprivate struct Const {
+    static let hintStringFormat = "Pan from %s edge to start transition"
+}
+
 class FirstViewController: UIViewController {
+    
+    //MARK: - Views
+    
+    @IBOutlet weak var switchTransitionDirectionBarButton: UIBarButtonItem!
+    @IBOutlet weak var hintLabel: UILabel!
     
     //MARK: - Properties
     
     private let transitionAnimator: DirectionAnimator = {
         let animator = DirectionAnimator()
-        animator.transitionDirection = .right
+        animator.transitionDirection = .left
         return animator
     }()
     
-    private var scaleAnimator: ScaleInteractiveAnimator!
+    private var interactiveAnimator: DirectionInteractiveAnimator!
     
     private var destinationController: UIViewController!
     
@@ -28,12 +37,28 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         destinationController = createDestinationController()
-        scaleAnimator = ScaleInteractiveAnimator(animator: transitionAnimator)
-        scaleAnimator.sourceViewController = self
-        scaleAnimator.destinationViewController = destinationController
+        interactiveAnimator = DirectionInteractiveAnimator()
+        interactiveAnimator.sourceViewController = self
+        interactiveAnimator.destinationViewController = destinationController
+        interactiveAnimator.direction = .left
+        setupSwitchBarButtonTitle()
+        setupHintLabel()
+        
     }
     
     //MARK: - Actions
+    
+    
+    @IBAction func switchTransitionDirection(_ sender: UIBarButtonItem) {
+        switch interactiveAnimator.direction {
+        case .left:
+            interactiveAnimator.direction = .right
+        case .right:
+            interactiveAnimator.direction = .left
+        }
+        setupSwitchBarButtonTitle()
+        setupHintLabel()
+    }
     
     @IBAction func showSecondController(_ sender: UITapGestureRecognizer) {
         present(destinationController, animated: true, completion: nil)
@@ -47,25 +72,18 @@ class FirstViewController: UIViewController {
     
 }
 
+//MARK: - Private Helper Methods
 
-//MARK: - UIViewControllerTransitioningDelegate
-
-//extension FirstViewController : UIViewControllerTransitioningDelegate {
-//    
-//    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        transitionAnimator.isDismissed = false
-//        print("Non Interactive")
-//        return transitionAnimator
-//    }
-//    
-//    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        transitionAnimator.isDismissed = true
-//        return transitionAnimator
-//    }
-//    
-//    func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-//        print("Interactive")
-//        return scaleAnimator
-//    }
-//}
-
+extension FirstViewController {
+    func setupSwitchBarButtonTitle() {
+        switchTransitionDirectionBarButton.title = interactiveAnimator.direction.title
+    }
+    
+    func setupHintLabel(){
+        let directionTitle = interactiveAnimator.direction.opposite.title.lowercased()
+        directionTitle.withCString {
+            hintLabel.text = String(format: Const.hintStringFormat, arguments: [$0])
+        }
+        
+    }
+}

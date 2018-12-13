@@ -16,7 +16,7 @@
 		F8FD6E1821B4AD2C003C10DC /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FD6E1721B4AD2C003C10DC /* SecondViewController.swift */; };
 		F8FD6E1B21B591AF003C10DC /* FadeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FD6E1A21B591AF003C10DC /* FadeAnimator.swift */; };
 		F8FD6E1F21B5C25C003C10DC /* DirectionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FD6E1E21B5C25C003C10DC /* DirectionAnimator.swift */; };
-		F8FD6E2121B5F108003C10DC /* ScaleInteractiveAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FD6E2021B5F108003C10DC /* ScaleInteractiveAnimator.swift */; };
+		F8FD6E2121B5F108003C10DC /* DirectionInteractiveAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FD6E2021B5F108003C10DC /* DirectionInteractiveAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,7 @@
 		F8FD6E1721B4AD2C003C10DC /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		F8FD6E1A21B591AF003C10DC /* FadeAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeAnimator.swift; sourceTree = "<group>"; };
 		F8FD6E1E21B5C25C003C10DC /* DirectionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionAnimator.swift; sourceTree = "<group>"; };
-		F8FD6E2021B5F108003C10DC /* ScaleInteractiveAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleInteractiveAnimator.swift; sourceTree = "<group>"; };
+		F8FD6E2021B5F108003C10DC /* DirectionInteractiveAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionInteractiveAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +138,7 @@
 			children = (
 				F8FD6E1A21B591AF003C10DC /* FadeAnimator.swift */,
 				F8FD6E1E21B5C25C003C10DC /* DirectionAnimator.swift */,
-				F8FD6E2021B5F108003C10DC /* ScaleInteractiveAnimator.swift */,
+				F8FD6E2021B5F108003C10DC /* DirectionInteractiveAnimator.swift */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -216,7 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8FD6E1B21B591AF003C10DC /* FadeAnimator.swift in Sources */,
-				F8FD6E2121B5F108003C10DC /* ScaleInteractiveAnimator.swift in Sources */,
+				F8FD6E2121B5F108003C10DC /* DirectionInteractiveAnimator.swift in Sources */,
 				F8FD6E1821B4AD2C003C10DC /* SecondViewController.swift in Sources */,
 				F8FD6E1F21B5C25C003C10DC /* DirectionAnimator.swift in Sources */,
 				F8FD6DFF21B49C37003C10DC /* FirstViewController.swift in Sources */,
