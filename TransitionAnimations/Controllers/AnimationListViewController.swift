@@ -42,7 +42,9 @@ extension AnimationListViewController {
     
     
     func showFadeInFadeOut(){
-        print("Show fadeinout")
+        let storyboard = UIStoryboard(name: Consts.Controllers.FadeInFadeOutTransition.stryboardName, bundle: Bundle.main)
+        let controller = storyboard.instantiateViewController(withIdentifier: Consts.Controllers.FadeInFadeOutTransition.storyboardId)
+        navigationController?.pushViewController(controller, animated: true)
     }
     
 }
