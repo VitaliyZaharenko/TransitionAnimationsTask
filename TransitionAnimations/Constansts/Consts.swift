@@ -18,7 +18,7 @@ struct Consts {
         }
         
         struct Second {
-            static let storyboardName = "Main"
+            static let storyboardName = "SecondController"
             static let storyboardId = "SecondViewControllerId"
         }
     }

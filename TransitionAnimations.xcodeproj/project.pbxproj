@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F87F7F7821C98E850007856C /* SecondController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F87F7F7721C98E850007856C /* SecondController.storyboard */; };
 		F894347821C2DDBC008E0575 /* FadeInFadeOut.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F894347721C2DDBC008E0575 /* FadeInFadeOut.storyboard */; };
 		F8FD6DFD21B49C37003C10DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FD6DFC21B49C37003C10DC /* AppDelegate.swift */; };
 		F8FD6DFF21B49C37003C10DC /* FadeInFadeOutTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FD6DFE21B49C37003C10DC /* FadeInFadeOutTransitionViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F87F7F7721C98E850007856C /* SecondController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecondController.storyboard; sourceTree = "<group>"; };
 		F894347721C2DDBC008E0575 /* FadeInFadeOut.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FadeInFadeOut.storyboard; sourceTree = "<group>"; };
 		F8FD6DF921B49C37003C10DC /* TransitionAnimations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransitionAnimations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8FD6DFC21B49C37003C10DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				F8FD6E0021B49C37003C10DC /* Main.storyboard */,
 				F8FD6E0521B49C37003C10DC /* LaunchScreen.storyboard */,
 				F894347721C2DDBC008E0575 /* FadeInFadeOut.storyboard */,
+				F87F7F7721C98E850007856C /* SecondController.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F87F7F7821C98E850007856C /* SecondController.storyboard in Resources */,
 				F8FD6E0721B49C37003C10DC /* LaunchScreen.storyboard in Resources */,
 				F8FD6E0421B49C37003C10DC /* Assets.xcassets in Resources */,
 				F894347821C2DDBC008E0575 /* FadeInFadeOut.storyboard in Resources */,
