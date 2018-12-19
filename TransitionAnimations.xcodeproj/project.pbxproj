@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F894347621C2D6D4008E0575 /* DirectionInteractive.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F894347521C2D6D4008E0575 /* DirectionInteractive.storyboard */; };
+		F8F6AABD21CAC0AA00648C83 /* SecondController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8F6AABC21CAC0AA00648C83 /* SecondController.storyboard */; };
 		F8FD6DFD21B49C37003C10DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FD6DFC21B49C37003C10DC /* AppDelegate.swift */; };
 		F8FD6DFF21B49C37003C10DC /* DirectionInteractiveTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FD6DFE21B49C37003C10DC /* DirectionInteractiveTransitionViewController.swift */; };
 		F8FD6E0221B49C37003C10DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8FD6E0021B49C37003C10DC /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		F894347521C2D6D4008E0575 /* DirectionInteractive.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DirectionInteractive.storyboard; sourceTree = "<group>"; };
+		F8F6AABC21CAC0AA00648C83 /* SecondController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecondController.storyboard; sourceTree = "<group>"; };
 		F8FD6DF921B49C37003C10DC /* TransitionAnimations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransitionAnimations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8FD6DFC21B49C37003C10DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8FD6DFE21B49C37003C10DC /* DirectionInteractiveTransitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionInteractiveTransitionViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				F8FD6E0021B49C37003C10DC /* Main.storyboard */,
 				F8FD6E0521B49C37003C10DC /* LaunchScreen.storyboard */,
 				F894347521C2D6D4008E0575 /* DirectionInteractive.storyboard */,
+				F8F6AABC21CAC0AA00648C83 /* SecondController.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8F6AABD21CAC0AA00648C83 /* SecondController.storyboard in Resources */,
 				F8FD6E0721B49C37003C10DC /* LaunchScreen.storyboard in Resources */,
 				F8FD6E0421B49C37003C10DC /* Assets.xcassets in Resources */,
 				F8FD6E0221B49C37003C10DC /* Main.storyboard in Resources */,
