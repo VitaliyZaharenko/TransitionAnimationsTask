@@ -7,23 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F81E109021C991D300662ADB /* AnimationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81E108F21C991D200662ADB /* AnimationListViewController.swift */; };
+		F8398E9D21CAC2B500E97851 /* DirectionInteractiveAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8398E9C21CAC2B500E97851 /* DirectionInteractiveAnimator.swift */; };
+		F8398E9F21CAC2DB00E97851 /* DirectionInteractiveTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8398E9E21CAC2DB00E97851 /* DirectionInteractiveTransitionViewController.swift */; };
+		F8398EA121CAC2F900E97851 /* DirectionInteractive.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8398EA021CAC2F900E97851 /* DirectionInteractive.storyboard */; };
+		F87F7F7821C98E850007856C /* SecondController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F87F7F7721C98E850007856C /* SecondController.storyboard */; };
+		F894347821C2DDBC008E0575 /* FadeInFadeOut.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F894347721C2DDBC008E0575 /* FadeInFadeOut.storyboard */; };
+		F8F6AAB721CAB83700648C83 /* DirectionTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F6AAB621CAB83700648C83 /* DirectionTransitionViewController.swift */; };
+		F8F6AAB921CAB84D00648C83 /* DirectionTransition.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8F6AAB821CAB84D00648C83 /* DirectionTransition.storyboard */; };
+		F8F6AABB21CAB87F00648C83 /* DirectionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F6AABA21CAB87F00648C83 /* DirectionAnimator.swift */; };
 		F8FD6DFD21B49C37003C10DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FD6DFC21B49C37003C10DC /* AppDelegate.swift */; };
-		F8FD6DFF21B49C37003C10DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FD6DFE21B49C37003C10DC /* ViewController.swift */; };
+		F8FD6DFF21B49C37003C10DC /* FadeInFadeOutTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FD6DFE21B49C37003C10DC /* FadeInFadeOutTransitionViewController.swift */; };
 		F8FD6E0221B49C37003C10DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8FD6E0021B49C37003C10DC /* Main.storyboard */; };
 		F8FD6E0421B49C37003C10DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8FD6E0321B49C37003C10DC /* Assets.xcassets */; };
 		F8FD6E0721B49C37003C10DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8FD6E0521B49C37003C10DC /* LaunchScreen.storyboard */; };
 		F8FD6E1321B49E14003C10DC /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FD6E1221B49E14003C10DC /* Consts.swift */; };
+		F8FD6E1821B4AD2C003C10DC /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FD6E1721B4AD2C003C10DC /* SecondViewController.swift */; };
+		F8FD6E1B21B591AF003C10DC /* FadeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FD6E1A21B591AF003C10DC /* FadeAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F81E108F21C991D200662ADB /* AnimationListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationListViewController.swift; sourceTree = "<group>"; };
+		F8398E9C21CAC2B500E97851 /* DirectionInteractiveAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionInteractiveAnimator.swift; sourceTree = "<group>"; };
+		F8398E9E21CAC2DB00E97851 /* DirectionInteractiveTransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionInteractiveTransitionViewController.swift; sourceTree = "<group>"; };
+		F8398EA021CAC2F900E97851 /* DirectionInteractive.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DirectionInteractive.storyboard; sourceTree = "<group>"; };
+		F87F7F7721C98E850007856C /* SecondController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecondController.storyboard; sourceTree = "<group>"; };
+		F894347721C2DDBC008E0575 /* FadeInFadeOut.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FadeInFadeOut.storyboard; sourceTree = "<group>"; };
+		F8F6AAB621CAB83700648C83 /* DirectionTransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionTransitionViewController.swift; sourceTree = "<group>"; };
+		F8F6AAB821CAB84D00648C83 /* DirectionTransition.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DirectionTransition.storyboard; sourceTree = "<group>"; };
+		F8F6AABA21CAB87F00648C83 /* DirectionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionAnimator.swift; sourceTree = "<group>"; };
 		F8FD6DF921B49C37003C10DC /* TransitionAnimations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransitionAnimations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8FD6DFC21B49C37003C10DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F8FD6DFE21B49C37003C10DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F8FD6DFE21B49C37003C10DC /* FadeInFadeOutTransitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeInFadeOutTransitionViewController.swift; sourceTree = "<group>"; };
 		F8FD6E0121B49C37003C10DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F8FD6E0321B49C37003C10DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8FD6E0621B49C37003C10DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8FD6E0821B49C37003C10DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8FD6E1221B49E14003C10DC /* Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
+		F8FD6E1721B4AD2C003C10DC /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		F8FD6E1A21B591AF003C10DC /* FadeAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +78,7 @@
 		F8FD6DFB21B49C37003C10DC /* TransitionAnimations */ = {
 			isa = PBXGroup;
 			children = (
+				F8FD6E1921B55969003C10DC /* Animation */,
 				F8FD6E1121B49E01003C10DC /* Constansts */,
 				F8FD6E0E21B49C7F003C10DC /* Controllers */,
 				F8FD6E1421B49E29003C10DC /* Views */,
@@ -71,7 +94,11 @@
 		F8FD6E0E21B49C7F003C10DC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F8FD6DFE21B49C37003C10DC /* ViewController.swift */,
+				F81E108F21C991D200662ADB /* AnimationListViewController.swift */,
+				F8FD6DFE21B49C37003C10DC /* FadeInFadeOutTransitionViewController.swift */,
+				F8F6AAB621CAB83700648C83 /* DirectionTransitionViewController.swift */,
+				F8398E9E21CAC2DB00E97851 /* DirectionInteractiveTransitionViewController.swift */,
+				F8FD6E1721B4AD2C003C10DC /* SecondViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -81,6 +108,10 @@
 			children = (
 				F8FD6E0021B49C37003C10DC /* Main.storyboard */,
 				F8FD6E0521B49C37003C10DC /* LaunchScreen.storyboard */,
+				F894347721C2DDBC008E0575 /* FadeInFadeOut.storyboard */,
+				F8F6AAB821CAB84D00648C83 /* DirectionTransition.storyboard */,
+				F8398EA021CAC2F900E97851 /* DirectionInteractive.storyboard */,
+				F87F7F7721C98E850007856C /* SecondController.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -121,6 +152,16 @@
 			children = (
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F8FD6E1921B55969003C10DC /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				F8FD6E1A21B591AF003C10DC /* FadeAnimator.swift */,
+				F8F6AABA21CAB87F00648C83 /* DirectionAnimator.swift */,
+				F8398E9C21CAC2B500E97851 /* DirectionInteractiveAnimator.swift */,
+			);
+			path = Animation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,9 +223,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F87F7F7821C98E850007856C /* SecondController.storyboard in Resources */,
 				F8FD6E0721B49C37003C10DC /* LaunchScreen.storyboard in Resources */,
 				F8FD6E0421B49C37003C10DC /* Assets.xcassets in Resources */,
+				F894347821C2DDBC008E0575 /* FadeInFadeOut.storyboard in Resources */,
 				F8FD6E0221B49C37003C10DC /* Main.storyboard in Resources */,
+				F8398EA121CAC2F900E97851 /* DirectionInteractive.storyboard in Resources */,
+				F8F6AAB921CAB84D00648C83 /* DirectionTransition.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,8 +240,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8FD6DFF21B49C37003C10DC /* ViewController.swift in Sources */,
+				F8398E9F21CAC2DB00E97851 /* DirectionInteractiveTransitionViewController.swift in Sources */,
+				F8FD6E1B21B591AF003C10DC /* FadeAnimator.swift in Sources */,
+				F81E109021C991D300662ADB /* AnimationListViewController.swift in Sources */,
+				F8FD6E1821B4AD2C003C10DC /* SecondViewController.swift in Sources */,
+				F8FD6DFF21B49C37003C10DC /* FadeInFadeOutTransitionViewController.swift in Sources */,
+				F8F6AAB721CAB83700648C83 /* DirectionTransitionViewController.swift in Sources */,
 				F8FD6E1321B49E14003C10DC /* Consts.swift in Sources */,
+				F8F6AABB21CAB87F00648C83 /* DirectionAnimator.swift in Sources */,
+				F8398E9D21CAC2B500E97851 /* DirectionInteractiveAnimator.swift in Sources */,
 				F8FD6DFD21B49C37003C10DC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

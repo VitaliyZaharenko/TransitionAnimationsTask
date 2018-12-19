@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cG0-eq-8Pd">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Fade In Fade Out Transition View Controller-->
+        <scene sceneID="oWb-5a-i7q">
+            <objects>
+                <viewController storyboardIdentifier="FadeInFadeOutTransitionViewControllerId" id="cG0-eq-8Pd" customClass="FadeInFadeOutTransitionViewController" customModule="TransitionAnimations" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2le-el-ugI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic1" translatesAutoresizingMaskIntoConstraints="NO" id="c6e-K5-48r">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8NW-ID-Ec5">
+                                <rect key="frame" x="0.0" y="269.5" width="375" height="128"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to present new controller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ntP-Mf-mGy">
+                                        <rect key="frame" x="75" y="53" width="223.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                        <size key="shadowOffset" width="2" height="2"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ntP-Mf-mGy" firstAttribute="centerX" secondItem="8NW-ID-Ec5" secondAttribute="centerX" id="1oi-Ng-nP9"/>
+                                    <constraint firstItem="ntP-Mf-mGy" firstAttribute="centerY" secondItem="8NW-ID-Ec5" secondAttribute="centerY" id="cAV-Ns-V8E"/>
+                                    <constraint firstAttribute="height" constant="128" id="j9N-TN-OBp"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="c6e-K5-48r" firstAttribute="leading" secondItem="npx-5o-HIz" secondAttribute="leading" id="22A-Rh-Liz"/>
+                            <constraint firstItem="c6e-K5-48r" firstAttribute="top" secondItem="npx-5o-HIz" secondAttribute="top" id="B2s-w3-AtR"/>
+                            <constraint firstItem="8NW-ID-Ec5" firstAttribute="centerY" secondItem="2le-el-ugI" secondAttribute="centerY" id="Bgs-cc-CxV"/>
+                            <constraint firstItem="npx-5o-HIz" firstAttribute="trailing" secondItem="8NW-ID-Ec5" secondAttribute="trailing" id="E2C-xI-Y7E"/>
+                            <constraint firstItem="8NW-ID-Ec5" firstAttribute="centerX" secondItem="2le-el-ugI" secondAttribute="centerX" id="Euy-aE-k8d"/>
+                            <constraint firstItem="npx-5o-HIz" firstAttribute="bottom" secondItem="c6e-K5-48r" secondAttribute="bottom" id="NnJ-hh-hSf"/>
+                            <constraint firstAttribute="trailing" secondItem="c6e-K5-48r" secondAttribute="trailing" id="Tdc-1O-Ryf"/>
+                            <constraint firstItem="8NW-ID-Ec5" firstAttribute="leading" secondItem="npx-5o-HIz" secondAttribute="leading" id="dc8-46-54g"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="npx-5o-HIz"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="eis-LR-kpf" appends="YES" id="5o8-SL-0be"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y79-3t-lbP" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="eis-LR-kpf">
+                    <connections>
+                        <action selector="showSecondController:" destination="cG0-eq-8Pd" id="vnO-Dy-CeB"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-4" y="5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pic1" width="1500" height="908"/>
+    </resources>
+</document>

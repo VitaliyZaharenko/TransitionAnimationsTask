@@ -9,5 +9,27 @@
 import Foundation
 
 struct Consts {
-    
+
+    struct Controllers {
+
+        struct FadeInFadeOutTransition {
+            static let stryboardName = "FadeInFadeOut"
+            static let storyboardId = "FadeInFadeOutTransitionViewControllerId"
+        }
+
+        struct DirectionTransition {
+            static let stryboardName = "DirectionTransition"
+            static let storyboardId = "DirectionTransitionViewControllerId"
+        }
+
+        struct DirectionInteractiveTransition {
+            static let stryboardName = "DirectionInteractive"
+            static let storyboardId = "DirectionInteractiveTransitionViewControllerId"
+        }
+
+        struct Second {
+            static let storyboardName = "SecondController"
+            static let storyboardId = "SecondViewControllerId"
+        }
+    }
 }
