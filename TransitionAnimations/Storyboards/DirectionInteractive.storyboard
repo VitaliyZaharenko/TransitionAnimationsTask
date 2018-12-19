@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CWz-Ov-baf">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Direction Interactive Transition View Controller-->
+        <scene sceneID="riI-uK-nlf">
+            <objects>
+                <viewController storyboardIdentifier="DirectionInteractiveTransitionViewControllerId" id="Lr5-iC-Djj" customClass="DirectionInteractiveTransitionViewController" customModule="TransitionAnimations" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="smu-12-v2i">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic1" translatesAutoresizingMaskIntoConstraints="NO" id="g4g-XD-7HF">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggP-gS-2tT">
+                                <rect key="frame" x="0.0" y="269.5" width="375" height="128"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some description text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKR-iu-g5x">
+                                        <rect key="frame" x="103" y="53" width="167.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                        <size key="shadowOffset" width="2" height="2"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="XKR-iu-g5x" firstAttribute="centerY" secondItem="ggP-gS-2tT" secondAttribute="centerY" id="Gjh-0G-Zhf"/>
+                                    <constraint firstItem="XKR-iu-g5x" firstAttribute="centerX" secondItem="ggP-gS-2tT" secondAttribute="centerX" id="T8V-zU-5MI"/>
+                                    <constraint firstAttribute="height" constant="128" id="c5P-eq-b8h"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="g4g-XD-7HF" firstAttribute="top" secondItem="9Oi-yP-JSZ" secondAttribute="top" id="D6H-Tl-LcE"/>
+                            <constraint firstItem="9Oi-yP-JSZ" firstAttribute="trailing" secondItem="ggP-gS-2tT" secondAttribute="trailing" id="GZb-6a-Olm"/>
+                            <constraint firstAttribute="trailing" secondItem="g4g-XD-7HF" secondAttribute="trailing" id="Ug1-Ra-QbL"/>
+                            <constraint firstItem="9Oi-yP-JSZ" firstAttribute="bottom" secondItem="g4g-XD-7HF" secondAttribute="bottom" id="cRP-mz-UMH"/>
+                            <constraint firstItem="ggP-gS-2tT" firstAttribute="leading" secondItem="9Oi-yP-JSZ" secondAttribute="leading" id="ciZ-nS-egn"/>
+                            <constraint firstItem="ggP-gS-2tT" firstAttribute="centerY" secondItem="smu-12-v2i" secondAttribute="centerY" id="fXJ-nn-A9X"/>
+                            <constraint firstItem="ggP-gS-2tT" firstAttribute="centerX" secondItem="smu-12-v2i" secondAttribute="centerX" id="rXZ-ij-PXn"/>
+                            <constraint firstItem="g4g-XD-7HF" firstAttribute="leading" secondItem="9Oi-yP-JSZ" secondAttribute="leading" id="v89-9j-Pav"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9Oi-yP-JSZ"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="0T9-Tw-r35" appends="YES" id="YUe-k1-qkl"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="Cdd-Gb-Gi1">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="7a3-at-QUS">
+                            <connections>
+                                <action selector="switchTransitionDirection:" destination="Lr5-iC-Djj" id="6w7-OX-UtM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="hintLabel" destination="XKR-iu-g5x" id="0vK-HZ-3ZI"/>
+                        <outlet property="switchTransitionDirectionBarButton" destination="7a3-at-QUS" id="4vl-BW-gz9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QKV-mc-bnd" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="0T9-Tw-r35">
+                    <connections>
+                        <action selector="showSecondController:" destination="Lr5-iC-Djj" id="dRG-Rb-a46"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="527.20000000000005" y="54.422788605697157"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="55p-hT-CKE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CWz-Ov-baf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Sny-oJ-nHL">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Lr5-iC-Djj" kind="relationship" relationship="rootViewController" id="9fA-cE-1zU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A4i-D9-hI2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-202" y="55"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pic1" width="1500" height="908"/>
+    </resources>
+</document>

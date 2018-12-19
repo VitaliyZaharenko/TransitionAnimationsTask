@@ -15,13 +15,15 @@ fileprivate struct Const {
     }
     struct DirectionTransitionItem {
         static let index = 1
+        
+        static let titleSegmentedControlLeft = "Left"
+        static let titleSegmentedControlRight = "Right"
+        static let titleSegmentedControlUp = "Up"
+        static let titleSegmentedControlDown = "Down"
     }
     
-    struct DirectionSegmentedControl {
-        static let leftTitle = "Left"
-        static let rightTitle = "Right"
-        static let upTitle = "Up"
-        static let downTitle = "Down"
+    struct DirectionInteractiveTransitionItem {
+        static let index = 2
     }
     
     
@@ -37,6 +39,7 @@ class AnimationListViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
     
     
@@ -47,6 +50,8 @@ class AnimationListViewController: UITableViewController {
             showFadeInFadeOut()
         case Const.DirectionTransitionItem.index:
             showDirectionTransition()
+        case Const.DirectionInteractiveTransitionItem.index:
+            showInteractiveDirectionTransition()
         default:
             return
         }
@@ -77,19 +82,25 @@ extension AnimationListViewController {
     func transitionDirection() -> TransitionDirection {
         let title = directionTransitionSegmentedControl.titleForSegment(at: directionTransitionSegmentedControl.selectedSegmentIndex)!
         switch title {
-        case Const.DirectionSegmentedControl.leftTitle:
+        case Const.DirectionTransitionItem.titleSegmentedControlLeft:
             return TransitionDirection.left
-        case Const.DirectionSegmentedControl.rightTitle:
+        case Const.DirectionTransitionItem.titleSegmentedControlRight:
             return TransitionDirection.right
-        case Const.DirectionSegmentedControl.upTitle:
+        case Const.DirectionTransitionItem.titleSegmentedControlUp:
             return TransitionDirection.up
-        case Const.DirectionSegmentedControl.downTitle:
+        case Const.DirectionTransitionItem.titleSegmentedControlDown:
             return TransitionDirection.down
         default:
             fatalError("Unknow segmented control title: \(title)")
         }
-        
     }
+    
+    func showInteractiveDirectionTransition(){
+        let storyboard = UIStoryboard(name: Consts.Controllers.DirectionInteractiveTransition.stryboardName, bundle: Bundle.main)
+        let controller = storyboard.instantiateViewController(withIdentifier: Consts.Controllers.DirectionInteractiveTransition.storyboardId)
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
     
 }
 

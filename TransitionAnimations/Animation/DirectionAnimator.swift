@@ -78,7 +78,10 @@ class DirectionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         }, completion: { _ in
             fromView.transform = fromViewTransform
             toView.transform = toViewTransform
-            transitionContext.completeTransition(true)
+            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+            if transitionContext.transitionWasCancelled {
+                toView.removeFromSuperview()
+            }
         })
         
         
