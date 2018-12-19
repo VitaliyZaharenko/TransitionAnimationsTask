@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Second View Controller-->
+        <scene sceneID="Dfh-92-QgV">
+            <objects>
+                <viewController storyboardIdentifier="SecondViewControllerId" id="GnZ-NN-kBz" customClass="SecondViewController" customModule="TransitionAnimations" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mlZ-ZA-nXD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic2" translatesAutoresizingMaskIntoConstraints="NO" id="dAY-mo-Sxt">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nUS-yQ-tQV">
+                                <rect key="frame" x="0.0" y="233.5" width="375" height="200"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some long long long text multilined text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p9b-pv-xnn">
+                                        <rect key="frame" x="50" y="0.0" width="275" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="MD7-bl-tSz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="p9b-pv-xnn" firstAttribute="leading" secondItem="nUS-yQ-tQV" secondAttribute="leading" constant="50" id="8gu-ju-39n"/>
+                                    <constraint firstAttribute="trailing" secondItem="p9b-pv-xnn" secondAttribute="trailing" constant="50" id="gZn-O2-Eet"/>
+                                    <constraint firstItem="p9b-pv-xnn" firstAttribute="top" secondItem="nUS-yQ-tQV" secondAttribute="top" id="qsv-eH-bs1"/>
+                                    <constraint firstAttribute="bottom" secondItem="p9b-pv-xnn" secondAttribute="bottom" id="rHN-DY-tz1"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="dAY-mo-Sxt" firstAttribute="leading" secondItem="IvU-qM-EE4" secondAttribute="leading" id="3vR-CT-Xm2"/>
+                            <constraint firstItem="IvU-qM-EE4" firstAttribute="bottom" secondItem="dAY-mo-Sxt" secondAttribute="bottom" id="79o-vZ-kz1"/>
+                            <constraint firstItem="IvU-qM-EE4" firstAttribute="trailing" secondItem="dAY-mo-Sxt" secondAttribute="trailing" id="9RK-Hs-tk5"/>
+                            <constraint firstItem="IvU-qM-EE4" firstAttribute="trailing" secondItem="nUS-yQ-tQV" secondAttribute="trailing" id="FnH-Th-qf5"/>
+                            <constraint firstItem="nUS-yQ-tQV" firstAttribute="centerX" secondItem="mlZ-ZA-nXD" secondAttribute="centerX" id="IFC-8j-3E3"/>
+                            <constraint firstItem="nUS-yQ-tQV" firstAttribute="leading" secondItem="IvU-qM-EE4" secondAttribute="leading" id="Yhm-8e-8Zb"/>
+                            <constraint firstItem="dAY-mo-Sxt" firstAttribute="top" secondItem="IvU-qM-EE4" secondAttribute="top" id="pK4-kk-eWw"/>
+                            <constraint firstItem="nUS-yQ-tQV" firstAttribute="centerY" secondItem="mlZ-ZA-nXD" secondAttribute="centerY" id="tL2-Yk-mrK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="IvU-qM-EE4"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="NCw-V2-PqH" appends="YES" id="jsl-oH-94U"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Vl-Nj-xB4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="NCw-V2-PqH">
+                    <connections>
+                        <action selector="dismissController:" destination="GnZ-NN-kBz" id="fVG-KA-UPY"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="380" y="36"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pic2" width="1286" height="1600"/>
+    </resources>
+</document>

@@ -8,13 +8,13 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class DirectionTransitionViewController: UIViewController {
     
     //MARK: - Properties
     
     let transitionAnimator: DirectionAnimator = {
         let animator = DirectionAnimator()
-        animator.transitionDirection = .random
+        animator.transitionDirection = .right
         return animator
     }()
     
@@ -38,7 +38,7 @@ class FirstViewController: UIViewController {
 
 //MARK: - UIViewControllerTransitioningDelegate
 
-extension FirstViewController : UIViewControllerTransitioningDelegate {
+extension DirectionTransitionViewController : UIViewControllerTransitioningDelegate {
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transitionAnimator.isDismissed = false
